@@ -36,7 +36,7 @@ public class Twitter {
 			
 			TwitterPoruka tp = new TwitterPoruka();
 			
-			tp.setKorisnik("korisnik");
+			tp.setKorisnik(korisnik);
 			tp.setPoruka(poruka);
 			
 			poruke.addLast(tp);
@@ -61,19 +61,15 @@ public class Twitter {
 			
 		if (maxBroj<=0)
 			maxBroj = 100;
-			//Pomocna promenljiva koja predstavlja brojac upisanih poruka
+		
 			int brojac = 0;
-			//Pomocni niz koja predstavlja rezultat pretrage tj. sadrzace
-			//sve poruke koje u sebi imaju zadati tag
+		
 			TwitterPoruka[] rezultat = new TwitterPoruka[maxBroj];
-			//Pretrazuju se poruke i traze se one koje sadrze tag.
-			//Ako se nadje neka takva, i ako nije prekoracen maxBroj
-			//ona se upisuje u niz. Ako je prekoracen maxBroj,pretraga
-			//se prekida.
+		
 			for (int i = 0; i < poruke.size(); i++)
 				if (poruke.get(i).getPoruka().indexOf(tag)!=-1)
 					if (brojac < maxBroj){
-			rezultat[brojac+1]=poruke.get(i);
+			rezultat[brojac]=poruke.get(i);
 			brojac++;
 		}
 			else break;

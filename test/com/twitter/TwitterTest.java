@@ -81,7 +81,7 @@ public class TwitterTest {
 		t.unesi("Mara", "ovo je marin tvit #tweet");
 		
 		assertEquals(1, t.vratiSvePoruke().size());
-		assertEquals(tp, t.vratiSvePoruke().get(0));
+		assertEquals("Mara", tp.getKorisnik());
 	}
 
 	/**
@@ -128,14 +128,17 @@ public class TwitterTest {
 		poruke.add(tp2);
 		poruke.add(tp3);
 		
-		TwitterPoruka[] rezultat = t.vratiPoruke(2, "#tweet");
+		TwitterPoruka[] rezultat = t.vratiPoruke(3, "#tweet");
 		
-		TwitterPoruka[] tweet = new TwitterPoruka[2];
+		TwitterPoruka[] tweet = new TwitterPoruka[3];
 		tweet[0] = tp1;
 		tweet[1] = tp2;
+		tweet[2] = null;
 		
 		assertEquals (tweet.length, rezultat.length);
 		assertEquals (tweet[0], rezultat[0]);
+		assertEquals (tweet[1], rezultat[1]);
+		assertEquals (tweet[2], rezultat[2]);
 		
 		
 	}
