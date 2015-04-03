@@ -4,14 +4,34 @@ import java.util.LinkedList;
 
 import com.twitter.poruke.TwitterPoruka;
 
+/**
+ * 
+ * klasa predstavlja twitter
+ * @author marijaantic
+ *
+ */
+
 public class Twitter {
 
+	/**
+	 * lista koja sadrzi twitter poruke.
+	 */
 	private LinkedList<TwitterPoruka> poruke =
 			new LinkedList<TwitterPoruka>();
 			
+	/**
+	 * metoda vraca listu svih twitter poruka
+	 * @return poruke kao listu LinkedList<TwitterPoruka>
+	 */
 	public LinkedList<TwitterPoruka> vratiSvePoruke(){
 			return poruke;
 	  }
+	
+	/**
+	 * metoda unosi poruku na poslednje mesto liste
+	 * @param korisnik ime korisnika kao String
+	 * @param poruka sadrzaj poruke kao String
+	 */
 	public void unesi(String korisnik, String poruka) {
 			
 			TwitterPoruka tp = new TwitterPoruka();
@@ -21,6 +41,17 @@ public class Twitter {
 			
 			poruke.addLast(tp);
 		}
+	
+	/**
+	 * metova vraca niz poruka koje sadrze tag dat kao parametar
+	 * @param maxBroj broj poruka koje niz moze maksimalno da ima, int
+	 * @param tag String koji sadrze poruke koje trazimo 
+	 * @return niz TwitterPoruka[] elementi poruke koje sadrze tag 
+	 * <ul>
+	 * 	<li>null</li>
+	 *  <li>prazan String</li>
+	 * </ul>
+	 */
 			
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 			
