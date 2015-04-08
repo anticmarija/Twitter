@@ -46,7 +46,8 @@ public class Twitter {
 	 * metova vraca niz poruka koje sadrze tag dat kao parametar
 	 * @param maxBroj broj poruka koje niz moze maksimalno da ima, int
 	 * @param tag String koji sadrze poruke koje trazimo 
-	 * @return niz TwitterPoruka[] elementi poruke koje sadrze tag 
+	 * @return niz TwitterPoruka[] elementi poruke koje sadrze tag
+	 * @throws java.lang.RuntimeException ako je uneto null ili prazan String za tag 
 	 * <ul>
 	 * 	<li>null</li>
 	 *  <li>prazan String</li>

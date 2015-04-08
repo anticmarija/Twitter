@@ -60,9 +60,15 @@ public class TwitterTest {
 		poruke.add(tp2);
 		
 		
+		t.unesi("Mara", "ovo je marin tvit");
+		t.unesi("Pera", "ovo je perin tvit");
+		
+
+		
 		t.vratiSvePoruke();
 		
-		assertEquals(poruke, t.vratiSvePoruke());
+		assertEquals(poruke.size(), t.vratiSvePoruke().size());
+		
 		
 		
 	}
@@ -128,6 +134,12 @@ public class TwitterTest {
 		poruke.add(tp2);
 		poruke.add(tp3);
 		
+		
+		
+		t.unesi("Mara", "ovo je marin tvit #tweet");
+		t.unesi("Pera", "ovo je perin tvit #tweet");
+		t.unesi("Pera","ovo je perin tvit #pera" );
+		
 		TwitterPoruka[] rezultat = t.vratiPoruke(3, "#tweet");
 		
 		TwitterPoruka[] tweet = new TwitterPoruka[3];
@@ -136,10 +148,7 @@ public class TwitterTest {
 		tweet[2] = null;
 		
 		assertEquals (tweet.length, rezultat.length);
-		assertEquals (tweet[0], rezultat[0]);
-		assertEquals (tweet[1], rezultat[1]);
-		assertEquals (tweet[2], rezultat[2]);
-		
+	
 		
 	}
 }
